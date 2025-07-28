@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, ArrowUpDown, QrCode, Activity, User } from "lucide-react";
+import { Home, ArrowUpDown, QrCode, Activity, User, Users, Baby } from "lucide-react";
 
 interface MobileLayoutProps {
   children: ReactNode;
@@ -11,9 +11,9 @@ const MobileLayout = ({ children }: MobileLayoutProps) => {
 
   const navItems = [
     { icon: Home, label: "Home", path: "/" },
-    { icon: ArrowUpDown, label: "Transfer", path: "/transfer" },
+    { icon: Users, label: "Friends", path: "/friends" },
+    { icon: Baby, label: "Family", path: "/family" },
     { icon: QrCode, label: "QR", path: "/qr" },
-    { icon: Activity, label: "Activity", path: "/activity" },
     { icon: User, label: "Profile", path: "/profile" },
   ];
 

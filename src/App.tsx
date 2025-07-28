@@ -9,6 +9,8 @@ import Transfer from "./pages/Transfer";
 import QRScanner from "./pages/QRScanner";
 import Activity from "./pages/Activity";
 import Profile from "./pages/Profile";
+import Friends from "./pages/Friends";
+import Family from "./pages/Family";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +23,8 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MobileLayout><Home /></MobileLayout>} />
+          <Route path="/friends" element={<MobileLayout><Friends /></MobileLayout>} />
+          <Route path="/family" element={<MobileLayout><Family /></MobileLayout>} />
           <Route path="/transfer" element={<Transfer />} />
           <Route path="/send" element={<Transfer />} />
           <Route path="/request" element={<Transfer />} />
