@@ -1,7 +1,7 @@
 import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
-  appId: 'app.lovable.6b31f322514d43eeb88c0cf427b828b7',
+  appId: 'com.lovable.sirfatest',
   appName: 'sirfatest',
   webDir: 'dist',
   server: {
