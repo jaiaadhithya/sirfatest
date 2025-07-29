@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 
 const Friends = () => {
@@ -150,13 +151,13 @@ const Friends = () => {
                         <div className="flex items-center space-x-2">
                           <p className="font-medium text-foreground">{friend.name}</p>
                           {friend.balance !== 0 && (
-                            <span className={`text-xs px-2 py-1 rounded-full ${
-                              friend.balance > 0 
-                                ? "bg-success/20 text-success" 
-                                : "bg-warning/20 text-warning"
-                            }`}>
-                              {friend.balance > 0 ? "+" : ""}{friend.balance.toFixed(2)} QAR
-                            </span>
+                            <Badge 
+                              variant={friend.balance > 0 ? "default" : "destructive"}
+                              className="text-xs font-medium"
+                            >
+                              {friend.balance > 0 ? "+" : ""}
+                              {friend.balance.toFixed(2)} QAR
+                            </Badge>
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">{friend.payname}</p>
