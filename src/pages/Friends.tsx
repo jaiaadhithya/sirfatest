@@ -139,28 +139,26 @@ const Friends = () => {
                 <Card key={friend.id} className="p-4">
                   <div className="flex items-center justify-between">
                     <div className="flex items-center space-x-3">
-                      <div className="relative">
+                      <div className="relative flex flex-col items-center">
                         <div className="w-12 h-12 bg-muted rounded-full flex items-center justify-center text-lg">
                           {friend.avatar}
                         </div>
                         <div className="absolute -bottom-1 -right-1 text-xs">
                           {getStatusIndicator(friend.status)}
                         </div>
+                        {friend.balance !== 0 && (
+                          <span className={`mt-1 text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm border shadow-lg ${
+                            friend.balance > 0 
+                              ? "bg-green-500/20 text-green-400 border-green-500/30 shadow-green-500/25" 
+                              : "bg-red-500/20 text-red-400 border-red-500/30 shadow-red-500/25"
+                          }`}>
+                            {friend.balance > 0 ? "+" : ""}
+                            {friend.balance.toFixed(2)} QAR
+                          </span>
+                        )}
                       </div>
                       <div className="flex-1">
-                        <div className="flex items-center space-x-2">
-                          <p className="font-medium text-foreground">{friend.name}</p>
-                          {friend.balance !== 0 && (
-                            <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm border shadow-lg ${
-                              friend.balance > 0 
-                                ? "bg-green-500/20 text-green-400 border-green-500/30 shadow-green-500/25" 
-                                : "bg-red-500/20 text-red-400 border-red-500/30 shadow-red-500/25"
-                            }`}>
-                              {friend.balance > 0 ? "+" : ""}
-                              {friend.balance.toFixed(2)} QAR
-                            </span>
-                          )}
-                        </div>
+                        <p className="font-medium text-foreground">{friend.name}</p>
                         <p className="text-sm text-muted-foreground">{friend.payname}</p>
                         <p className="text-xs text-muted-foreground">{friend.lastSeen}</p>
                       </div>
