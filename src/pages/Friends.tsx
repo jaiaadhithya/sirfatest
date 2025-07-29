@@ -29,7 +29,7 @@ const Friends = () => {
       phone: "+974 5555 5678",
       avatar: "👩‍💼",
       payname: "@sarah.sirfa",
-      status: "online",
+ 
       lastSeen: "Active 2m ago",
       mutual: 12,
       balance: 25.50
@@ -40,7 +40,7 @@ const Friends = () => {
       phone: "+974 5555 9012",
       avatar: "👨‍💻",
       payname: "@omar.sirfa",
-      status: "offline",
+      
       lastSeen: "Active 1h ago",
       mutual: 8,
       balance: -15.00
