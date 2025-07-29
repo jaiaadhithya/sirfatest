@@ -151,13 +151,14 @@ const Friends = () => {
                         <div className="flex items-center space-x-2">
                           <p className="font-medium text-foreground">{friend.name}</p>
                           {friend.balance !== 0 && (
-                            <Badge 
-                              variant={friend.balance > 0 ? "default" : "destructive"}
-                              className="text-xs font-medium"
-                            >
+                            <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm border shadow-lg ${
+                              friend.balance > 0 
+                                ? "bg-green-500/20 text-green-400 border-green-500/30 shadow-green-500/25" 
+                                : "bg-red-500/20 text-red-400 border-red-500/30 shadow-red-500/25"
+                            }`}>
                               {friend.balance > 0 ? "+" : ""}
                               {friend.balance.toFixed(2)} QAR
-                            </Badge>
+                            </span>
                           )}
                         </div>
                         <p className="text-sm text-muted-foreground">{friend.payname}</p>
