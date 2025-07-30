@@ -1,28 +1,21 @@
 import { ReactNode } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { Home, ArrowUpDown, QrCode, Activity, User, Users, Baby } from "lucide-react";
-import { useUser } from "@/contexts/UserContext";
+import { Home, Target, CheckSquare, Award, User } from "lucide-react";
 
-interface MobileLayoutProps {
+interface KidMobileLayoutProps {
   children: ReactNode;
 }
 
-const MobileLayout = ({ children }: MobileLayoutProps) => {
+const KidMobileLayout = ({ children }: KidMobileLayoutProps) => {
   const location = useLocation();
-  const { userType } = useUser();
 
-  // Base navigation items for all adult users
-  const baseNavItems = [
-    { icon: Home, label: "Home", path: "/" },
-    { icon: Users, label: "Friends", path: "/friends" },
-    { icon: QrCode, label: "QR", path: "/qr" },
-    { icon: User, label: "Profile", path: "/profile" },
+  const navItems = [
+    { icon: Home, label: "Home", path: "/kid/home" },
+    { icon: Target, label: "Goals", path: "/kid/goals" },
+    { icon: CheckSquare, label: "Chores", path: "/kid/chores" },
+    { icon: Award, label: "Rewards", path: "/kid/rewards" },
+    { icon: User, label: "Profile", path: "/kid/profile" },
   ];
-  
-  // Add Family tab only for parents
-  const navItems = userType === 'parent' 
-    ? [...baseNavItems.slice(0, 2), { icon: Baby, label: "Family", path: "/family" }, ...baseNavItems.slice(2)]
-    : baseNavItems;
 
   return (
     <div className="min-h-screen bg-background flex flex-col max-w-md mx-auto relative">
@@ -53,4 +46,4 @@ const MobileLayout = ({ children }: MobileLayoutProps) => {
   );
 };
 
-export default MobileLayout;
+export default KidMobileLayout;

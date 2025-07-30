@@ -10,6 +10,7 @@ import ManageChildModal from "@/components/ManageChildModal";
 
 const Family = () => {
   const navigate = useNavigate();
+  const { userType } = useUser();
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedChild, setSelectedChild] = useState<any>(null);
   const [isManageModalOpen, setIsManageModalOpen] = useState(false);
@@ -297,10 +298,12 @@ const Family = () => {
               <Card className="p-4">
                 <h3 className="font-semibold text-foreground mb-4">Quick Actions</h3>
                 <div className="grid grid-cols-2 gap-3">
-                  <Button variant="outline" className="h-16 flex flex-col items-center justify-center space-y-1">
-                    <Plus size={20} />
-                    <span className="text-xs">Add Member</span>
-                  </Button>
+                  {userType === 'parent' && (
+                    <Button variant="outline" className="h-16 flex flex-col items-center justify-center space-y-1">
+                      <Plus size={20} />
+                      <span className="text-xs">Add Member</span>
+                    </Button>
+                  )}
                   <Button variant="outline" className="h-16 flex flex-col items-center justify-center space-y-1">
                     <Clock size={20} />
                     <span className="text-xs">Set Limits</span>

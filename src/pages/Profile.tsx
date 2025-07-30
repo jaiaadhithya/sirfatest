@@ -3,9 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Switch } from "@/components/ui/switch";
 import { useNavigate } from "react-router-dom";
+import { useUser } from "@/contexts/UserContext";
 
 const Profile = () => {
   const navigate = useNavigate();
+  const { setUserType, setIsLoggedIn } = useUser();
+
+  const handleLogout = () => {
+    setUserType(undefined);
+    setIsLoggedIn(false);
+    navigate('/login');
+  };
 
   const menuItems = [
     {
@@ -179,6 +187,7 @@ const Profile = () => {
         <Button
           variant="outline"
           className="w-full text-destructive border-destructive hover:bg-destructive/10"
+          onClick={handleLogout}
         >
           <LogOut size={20} className="mr-2" />
           Sign Out
