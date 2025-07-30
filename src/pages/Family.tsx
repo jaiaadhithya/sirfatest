@@ -1,15 +1,18 @@
 import { useState } from "react";
-import { ArrowLeft, Search, Plus, Gift, Shield, Clock, UserPlus } from "lucide-react";
+import { ArrowLeft, Search, Plus, Gift, Shield, Clock, UserPlus, Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { useNavigate } from "react-router-dom";
+import ManageChildModal from "@/components/ManageChildModal";
 
 const Family = () => {
   const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
+  const [selectedChild, setSelectedChild] = useState<any>(null);
+  const [isManageModalOpen, setIsManageModalOpen] = useState(false);
 
   const familyMembers = [
     {
@@ -207,9 +210,19 @@ const Family = () => {
                         <Gift size={14} className="mr-1" />
                         Send Money
                       </Button>
-                      <Button variant="outline" size="sm" className="flex-1">
-                        <Shield size={14} className="mr-1" />
-                        Settings
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="flex-1"
+                        onClick={() => {
+                          if (member.relationship.includes("Son") || member.relationship.includes("Daughter")) {
+                            setSelectedChild(member);
+                            setIsManageModalOpen(true);
+                          }
+                        }}
+                      >
+                        <Settings size={14} className="mr-1" />
+                        {member.relationship.includes("Son") || member.relationship.includes("Daughter") ? "Manage" : "Settings"}
                       </Button>
                     </div>
                   </div>
@@ -298,6 +311,17 @@ const Family = () => {
           </TabsContent>
         </Tabs>
       </div>
+
+      {selectedChild && (
+        <ManageChildModal
+          child={selectedChild}
+          isOpen={isManageModalOpen}
+          onClose={() => {
+            setIsManageModalOpen(false);
+            setSelectedChild(null);
+          }}
+        />
+      )}
     </div>
   );
 };

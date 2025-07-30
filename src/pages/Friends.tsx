@@ -13,7 +13,7 @@ const Friends = () => {
   const friends = [
     {
       id: 1,
-      name: "Ali Ahmed",
+      name: "Ali",
       phone: "+974 5555 1234",
       avatar: "🧑‍💼",
       payname: "@ali.sirfa",
@@ -24,7 +24,7 @@ const Friends = () => {
     },
     {
       id: 2,
-      name: "Sarah Al-Mansoori",
+      name: "Sarah",
       phone: "+974 5555 5678",
       avatar: "👩‍💼",
       payname: "@sarah.sirfa",
@@ -35,7 +35,7 @@ const Friends = () => {
     },
     {
       id: 3,
-      name: "Omar Hassan",
+      name: "Omar",
       phone: "+974 5555 9012",
       avatar: "👨‍💻",
       payname: "@omar.sirfa",
@@ -46,7 +46,7 @@ const Friends = () => {
     },
     {
       id: 4,
-      name: "Fatima Al-Thani",
+      name: "Fatima",
       phone: "+974 5555 3456",
       avatar: "👩‍🎓",
       payname: "@fatima.sirfa",
@@ -59,21 +59,21 @@ const Friends = () => {
 
   const recentActivity = [
     {
-      friend: "Ali Ahmed",
+      friend: "Ali",
       action: "sent you",
       amount: 150.00,
       time: "2 hours ago",
       avatar: "🧑‍💼"
     },
     {
-      friend: "Sarah Al-Mansoori",
+      friend: "Sarah",
       action: "requested from you",
       amount: 75.25,
       time: "1 day ago", 
       avatar: "👩‍💼"
     },
     {
-      friend: "Omar Hassan",
+      friend: "Omar",
       action: "you sent",
       amount: 45.00,
       time: "2 days ago",

@@ -12,25 +12,25 @@ const Home = () => {
     {
       icon: <Send size={20} />,
       title: "Send Money",
-      subtitle: "Transfer to anyone instantly",
+      subtitle: "Quick transfers",
       action: () => navigate("/send"),
     },
     {
       icon: <Download size={20} />,
       title: "Request Money",
-      subtitle: "Ask for payment via QR or link",
+      subtitle: "Request payments",
       action: () => navigate("/request"),
     },
     {
       icon: <QrCode size={20} />,
       title: "QR Pay",
-      subtitle: "Scan to pay merchants",
+      subtitle: "Scan & pay",
       action: () => navigate("/qr"),
     },
     {
       icon: <Users size={20} />,
       title: "Split Bill",
-      subtitle: "Divide expenses with friends",
+      subtitle: "Split expenses",
       action: () => navigate("/split"),
     },
   ];
@@ -38,7 +38,7 @@ const Home = () => {
   const recentTransactions = [
     {
       id: 1,
-      name: "Ali Ahmed",
+      name: "Ali",
       amount: -150.00,
       type: "sent",
       time: "2 hours ago",
@@ -54,7 +54,7 @@ const Home = () => {
     },
     {
       id: 3,
-      name: "Sarah Al-Mansoori",
+      name: "Sarah",
       amount: +200.00,
       type: "received",
       time: "2 days ago",
