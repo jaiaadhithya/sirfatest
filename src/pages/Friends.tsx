@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
 
 const Friends = () => {
@@ -14,7 +13,7 @@ const Friends = () => {
   const friends = [
     {
       id: 1,
-      name: "Ali",
+      name: "Ali Ahmed",
       phone: "+974 5555 1234",
       avatar: "🧑‍💼",
       payname: "@ali.sirfa",
@@ -25,7 +24,7 @@ const Friends = () => {
     },
     {
       id: 2,
-      name: "Sarah",
+      name: "Sarah Al-Mansoori",
       phone: "+974 5555 5678",
       avatar: "👩‍💼",
       payname: "@sarah.sirfa",
@@ -36,7 +35,7 @@ const Friends = () => {
     },
     {
       id: 3,
-      name: "Omar",
+      name: "Omar Hassan",
       phone: "+974 5555 9012",
       avatar: "👨‍💻",
       payname: "@omar.sirfa",
@@ -47,7 +46,7 @@ const Friends = () => {
     },
     {
       id: 4,
-      name: "Fatima",
+      name: "Fatima Al-Thani",
       phone: "+974 5555 3456",
       avatar: "👩‍🎓",
       payname: "@fatima.sirfa",
@@ -60,21 +59,21 @@ const Friends = () => {
 
   const recentActivity = [
     {
-      friend: "Ali",
+      friend: "Ali Ahmed",
       action: "sent you",
       amount: 150.00,
       time: "2 hours ago",
       avatar: "🧑‍💼"
     },
     {
-      friend: "Sarah",
+      friend: "Sarah Al-Mansoori",
       action: "requested from you",
       amount: 75.25,
       time: "1 day ago", 
       avatar: "👩‍💼"
     },
     {
-      friend: "Omar",
+      friend: "Omar Hassan",
       action: "you sent",
       amount: 45.00,
       time: "2 days ago",
@@ -151,13 +150,12 @@ const Friends = () => {
                         <div className="flex items-center space-x-2">
                           <p className="font-medium text-foreground">{friend.name}</p>
                           {friend.balance !== 0 && (
-                            <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm border shadow-lg ${
+                            <span className={`text-xs px-2 py-1 rounded-full ${
                               friend.balance > 0 
-                                ? "bg-green-500/20 text-green-400 border-green-500/30 shadow-green-500/25" 
-                                : "bg-red-500/20 text-red-400 border-red-500/30 shadow-red-500/25"
+                                ? "bg-success/20 text-success" 
+                                : "bg-warning/20 text-warning"
                             }`}>
-                              {friend.balance > 0 ? "+" : ""}
-                              {friend.balance.toFixed(2)} QAR
+                              {friend.balance > 0 ? "+" : ""}{friend.balance.toFixed(2)} QAR
                             </span>
                           )}
                         </div>
