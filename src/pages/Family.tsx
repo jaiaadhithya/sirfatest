@@ -7,6 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Switch } from "@/components/ui/switch";
 import { useNavigate } from "react-router-dom";
 import ManageChildModal from "@/components/ManageChildModal";
+import { useUser } from "@/contexts/UserContext"; // Add this line
 
 const Family = () => {
   const navigate = useNavigate();
