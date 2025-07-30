@@ -149,7 +149,7 @@ const Friends = () => {
                       </div>
                       <div className="flex-1">
                         <div className="flex items-center space-x-2">
-                          <p className="font-medium text-foreground">{friend.name}</p>
+                          <p className="font-medium text-foreground">sarah</p>
                           {friend.balance !== 0 && (
                             <span className={`text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm border shadow-lg ${
                               friend.balance > 0 
